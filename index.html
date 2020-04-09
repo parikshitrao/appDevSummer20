@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>class 5 assignment</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h2>Assignment Javascript</h2>
+    <div id="text_bar"><input type="text" id="in_out"/></div>
+    <div id="calc">
+      <button onclick="press(1)" class="calcbutton">1</button>
+      <button onclick="press(2)" class="calcbutton">2</button>
+      <button onclick="press(3)" class="calcbutton">3</button>
+      <button onclick="clear" class="calcbutton" ><img src="clear.png" id="clrbtn"></button>
+      <button onclick="press(4)" class="calcbutton">4</button>
+      <button onclick="press(5)" class="calcbutton">5</button>
+      <button onclick="press(6)" class="calcbutton">6</button>
+      <button onclick="add()" class="calcbutton">+</button>
+      <button onclick="press(7)" class="calcbutton">7</button>
+      <button onclick="press(8)" class="calcbutton">8</button>
+      <button onclick="press(9)" class="calcbutton">9</button>
+      <button onclick="sub()" class="calcbutton">-</button>
+      <button onclick="allclear()" class="calcbutton">ac</button>
+      <button onclick="press(0)" class="calcbutton">0</button>
+      <button onclick="answer()" class="calcbutton" id="ansbtn">=</button>
+    </div>
+    <script >
+      var int;
+      var var1=0,var2=0,temp=0;
+      function press(int) { 
+             document.getElementById("in_out").value+=int;
+             if(var1==0){
+               var1=int;
+             }else{
+               var1= (var1*10) + int;
+             }
+      }
+
+      function add(){
+        if(temp==2){
+          var2 = var2 - var1;
+          document.getElementById("in_out").value="";
+          document.getElementById("in_out").value+=var2;
+          document.getElementById("in_out").value+=" + ";
+          temp=1;
+          var1=0;
+        }else if(temp==1){
+          var2 = var2 + var1;
+          document.getElementById("in_out").value="";
+          document.getElementById("in_out").value+=var2;
+          document.getElementById("in_out").value+=" + ";
+          temp=1;
+          var1=0
+        }else{
+          var2 = var1;
+          temp=1;
+          var1=0
+          document.getElementById("in_out").value+=" + ";
+        }
+      }
+      function sub(){
+        if(temp==2){
+          var2 = var2 - var1;
+          document.getElementById("in_out").value="";
+          document.getElementById("in_out").value+=var2;
+          document.getElementById("in_out").value+=" - ";
+          temp=2;
+          var1=0;
+        }else if(temp==1){
+          var2 = var2 + var1;
+          document.getElementById("in_out").value="";
+          document.getElementById("in_out").value+=var2;
+          document.getElementById("in_out").value+=" - ";
+          temp=2;
+          var1=0
+        }else{
+          var2 = var1;
+          temp=2;
+          var1=0
+          document.getElementById("in_out").value+=" - ";
+        }
+      }
+      function answer(){
+        if(temp==2){
+          var2=var1-var2;
+          document.getElementById("in_out").value=var2;
+          var1=0;
+          temp=0;
+        }else if(temp=1){
+          var2=var1+var2;
+          document.getElementById("in_out").value=var2;
+          var1=0;
+          temp=0;
+        }else {
+          document.getElementById("in_out").value=var1;
+        }
+      }
+      function allclear(){
+        document.getElementById("in_out").value="";
+        var1=0;
+        var2=0;
+        temp=0;
+      }
+    </script>
+  </body>
+</html>

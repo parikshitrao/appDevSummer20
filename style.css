@@ -1,0 +1,20 @@
+body{
+  background-color:bisque;
+}
+#calc {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+
+}
+#in_out {
+  width: 196px;
+}
+#clrbtn{
+  height: 1em;
+  width: 1.5em;
+}
+
+#ansbtn {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}

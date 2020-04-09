@@ -6,6 +6,16 @@
   </head>
   <body>
     <h2>Assignment Javascript</h2>
+    <h3 id="username">Username : </h3>
+    <p>Input Array:
+          <h2 id="inputDisplay"></h2>
+    </p>
+    <p>Output Array:
+          <h2 id="outputDisplay"></h2>
+    </p>
+    <button onclick="power2()" id="powbtn"> ^2 </button>
+    <br><br>
+    <h3>Calculator :-</h3>
     <div id="text_bar"><input type="text" id="in_out"/></div>
     <div id="calc">
       <button onclick="press(1)" class="calcbutton">1</button>
@@ -25,8 +35,34 @@
       <button onclick="answer()" class="calcbutton" id="ansbtn">=</button>
     </div>
     <script >
-      var int;
-      var var1=0,var2=0,temp=0;
+       var user = { 
+            "admin": {
+                "firstName": "Parikshit",
+                "lastName": "Rao",
+                "age": 20,
+
+            },
+
+            "staff1" : {
+                "firstName": "Person",
+                "lastName": "1",
+                "age": 20,
+            }
+           
+        }
+        document.getElementById('username').innerHTML += user.admin['firstName'] 
+        document.getElementById('username').innerHTML +=" " + user.admin['lastName']
+
+        var a1=[2,3,5,7,11], a2;
+        document.getElementById('inputDisplay').innerHTML = a1;
+        a2 = a1.map(param1 =>  param1 * param1)
+        document.getElementById('outputDisplay').innerHTML = a2;
+        function power2(){
+            a2 = a2.map(param1 => param1 * param1)
+            document.getElementById('outputDisplay').innerHTML = a2;
+        }
+
+      var var1=0,var2=0,temp=0,int=0;
       function press(int) { 
              document.getElementById("in_out").value+=int;
              if(var1==0){
@@ -35,7 +71,6 @@
                var1= (var1*10) + int;
              }
       }
-
       function add(){
         if(temp==2){
           var2 = var2 - var1;

@@ -1,6 +1,18 @@
 body{
-  background-color:bisque;
+  background-color:azure;
 }
+
+p {
+  display:inline;
+}
+
+#powbtn {
+  padding-left: 3em;
+  padding-right: 3em;
+  background-color: #444;
+  color: whitesmoke;
+}
+
 #calc {
   display: grid;
   grid-template-columns: repeat(4, 50px);
